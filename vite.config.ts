@@ -16,11 +16,22 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import VueMacros from 'unplugin-vue-macros/vite'
+import postcssImport from 'postcss-import'
+import autoprefixer from 'autoprefixer'
+import postcssScss from 'postcss-scss'
 
 export default defineConfig({
   resolve: {
     alias: {
+      '@/': `${path.resolve(__dirname)}/`,
       '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
+
+  css: {
+    postcss: {
+      syntax: postcssScss,
+      plugins: [postcssImport, autoprefixer],
     },
   },
 
@@ -39,10 +50,17 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
+      dirs: [
+        { dir: 'src/pages', baseRoute: '' },
+        { dir: 'src/demo/pages', baseRoute: 'demo' },
+      ],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default',
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -55,17 +73,18 @@ export default defineConfig({
         '@vueuse/core',
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: [
-        'src/composables',
-        'src/stores',
-      ],
+      dirs: ['src/composables', 'src/stores'],
       vueTemplate: true,
     }),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
+      // relative paths to the directory to search for components.
+      dirs: ['src/components'],
+
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
+
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
@@ -147,7 +166,11 @@ export default defineConfig({
 
   // https://github.com/vitest-dev/vitest
   test: {
-    include: ['test/**/*.test.ts'],
+    include: [
+      'test/**/*.test.ts',
+      '**/__tests__/**/*.{test,spec,specs}.{ts,js}',
+      'docs/.vuepress/**/__tests__/**/*.{test,spec,specs}.{ts,js}',
+    ],
     environment: 'jsdom',
     deps: {
       inline: ['@vue', '@vueuse', 'vue-demi'],
@@ -158,7 +181,9 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    onFinished() { generateSitemap() },
+    onFinished() {
+      generateSitemap()
+    },
   },
 
   ssr: {

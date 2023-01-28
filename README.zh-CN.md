@@ -1,22 +1,19 @@
+<!-- markdownlint-disable MD041 -->
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
-</p>
-
-<p align='center'>
-快速地<sup><em>Vitesse</em></sup> 创建 Web 应用
+Vitesse<sup><em>快速</em></sup> + VuePress
 <br>
 </p>
 
 <br>
 
 <p align='center'>
-<a href="https://vitesse.netlify.app/">在线 Demo</a>
+<a href="https://www.zhaobc.site">在线 Demo</a>
 </p>
 
 <br>
 
 <p align='center'>
-<a href="https://github.com/antfu/vitesse/blob/main/README.md">English</a> | <b>简体中文</b>
+<a href="./README.md">English</a> | <b>简体中文</b>
 </p>
 
 <br>
@@ -89,14 +86,17 @@
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
 - [`vite-ssg-sitemap`](https://github.com/jbaubree/vite-ssg-sitemap) - 站点地图生成器
 - [`@vueuse/head`](https://github.com/vueuse/head) - 响应式地操作文档头信息
-- [`vite-plugin-vue-inspector`](https://github.com/webfansplz/vite-plugin-vue-inspector) - 点击页面元素自动跳转到本地IDE对应的 Vue 组件
+- [`vite-plugin-vue-inspector`](https://github.com/webfansplz/vite-plugin-vue-inspector) - 点击页面元素自动跳转到本地 IDE 对应的 Vue 组件
 
 ### 编码风格
 
 - 使用 Composition API 地 [`<script setup>` SFC 语法](https://github.com/vuejs/rfcs/pull/227)
 - [ESLint](https://eslint.org/) 配置为 [@antfu/eslint-config](https://github.com/antfu/eslint-config), 单引号, 无分号.
+- [commitizen](https://github.com/commitizen/cz-cli)
+  [commitizen init doesn't work with pnpm #858](https://github.com/commitizen/cz-cli/issues/858)
 
 ### 开发工具
+
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vitest](https://github.com/vitest-dev/vitest) - 基于 Vite 的单元测试框架
 - [Cypress](https://cypress.io/) - E2E 测试
@@ -115,18 +115,18 @@
 
 由于这个模板的业务场景非常的局限，下面提供了一个精心策划的列表，列出了社区维护的具有不同偏好和功能集的衍生项目。也可以看看他们。当然也欢迎你 PR 提供自己的项目！
 
-###### 官方
+### 官方
 
 - [vitesse-lite](https://github.com/antfu/vitesse-lite) - Vitesse 的轻量版本
 - [vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) - Vitesse 的 Nuxt 3 版本
 - [vitesse-nuxt-bridge](https://github.com/antfu/vitesse-nuxt-bridge) - Vitesse 的 Nuxt2 桥接版本
 - [vitesse-webext](https://github.com/antfu/vitesse-webext) - 开箱即用的浏览器扩展 vite 模板
 
-###### 社区
+### 社区
 
 [查看英文版](./README.md#community)
 
-## 现在可以试试!
+## 现在可以试试
 
 > Vitesse 需要 Node 版本 >=14.18
 
@@ -151,7 +151,7 @@ pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
 - [ ] 在 `LICENSE` 中改变作者名
 - [ ] 在 `App.vue` 中改变标题
 - [ ] 在 `vite.config.ts` 更改主机名
-- [ ] 在 `public` 目录下改变favicon
+- [ ] 在 `public` 目录下改变 favicon
 - [ ] 移除 `.github` 文件夹中包含资助的信息
 - [ ] 整理 README 并删除路由
 
@@ -161,7 +161,7 @@ pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
 
 ### 开发
 
-只需要执行以下命令就可以在 http://localhost:3333 中看到
+只需要执行以下命令就可以在 <http://localhost:3333> 中看到
 
 ```bash
 pnpm dev
@@ -180,3 +180,25 @@ pnpm build
 ### 部署到 Netlify
 
 前往 [Netlify](https://app.netlify.com/start) 并选择你的仓库, 一路 `OK` 下去，稍等一下后，你的应用将被创建.
+
+## VuePress@next
+
+### 主题
+
+[vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope): 一个具有强大功能的 vuepress 主题 ✨
+
+只需要执行以下命令就可以在 <http://localhost:8080> 中看到
+
+```bash
+pnpm run docs:dev
+```
+
+### 构建 VuePress
+
+构建 VuePress 只需要执行以下命令
+
+```bash
+pnpm run build:docs
+```
+
+然后你会看到用于发布的 `docs/.vuepress/dist` 文件夹被生成。

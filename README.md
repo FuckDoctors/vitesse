@@ -1,26 +1,22 @@
+<!-- markdownlint-disable MD041 -->
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
-</p>
-
-<p align='center'>
-Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
+<b>Vitesse</b><sup><em>(speed)</em></sup> + VuePress<br>
 </p>
 
 <br>
 
 <p align='center'>
-<a href="https://vitesse.netlify.app/">Live Demo</a>
+<a href="https://www.zhaobc.site">Live Demo</a>
 </p>
 
 <br>
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/antfu/vitesse/blob/main/README.zh-CN.md">简体中文</a>
-<!-- Contributors: Thanks for getting interested, however we DON'T accept new transitions to the README, thanks. -->
+<b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
+<!-- Contributors: Thanks for geting interested, however we DON'T accept new transitions to the README, thanks. -->
 </p>
 
 <br>
-
 
 ## Features
 
@@ -64,7 +60,6 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 <br>
 
-
 ## Pre-packed
 
 ### UI Frameworks
@@ -100,6 +95,8 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - Use Composition API with [`<script setup>` SFC syntax](https://github.com/vuejs/rfcs/pull/227)
 - [ESLint](https://eslint.org/) with [@antfu/eslint-config](https://github.com/antfu/eslint-config), single quotes, no semi.
+- [commitizen](https://github.com/commitizen/cz-cli)
+  [commitizen init doesn't work with pnpm #858](https://github.com/commitizen/cz-cli/issues/858)
 
 ### Dev tools
 
@@ -121,14 +118,14 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 As this template is strongly opinionated, the following provides a curated list for community-maintained variations with different preferences and feature sets. Check them out as well. PR to add yours is also welcome!
 
-###### Official
+### Official
 
 - [vitesse-lite](https://github.com/antfu/vitesse-lite) - Lightweight version of Vitesse
 - [vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) - Vitesse for Nuxt 3
 - [vitesse-nuxt-bridge](https://github.com/antfu/vitesse-nuxt-bridge) - Vitesse for Nuxt 2 with Bridge
 - [vitesse-webext](https://github.com/antfu/vitesse-webext) - WebExtension Vite starter template
 
-###### Community
+### Community
 
 - [vitesse-ssr-template](https://github.com/frandiox/vitesse-ssr-template) by [@frandiox](https://github.com/frandiox) - Vitesse with SSR
 - [vitailse](https://github.com/zynth17/vitailse) by [@zynth17](https://github.com/zynth17) - Like Vitesse but with TailwindCSS
@@ -140,7 +137,7 @@ As this template is strongly opinionated, the following provides a curated list 
 - [bat](https://github.com/olgam4/bat) by [@olgam4](https://github.com/olgam4) - Vitesse for SolidJS
 - [vitesse-solid](https://github.com/xbmlz/vitesse-solid) by [@xbmlz](https://github.com/xbmlz) - Vitesse for SolidJS, build with [`SolidStart`](https://start.solidjs.com/), includes [UnoCSS](https://github.com/unocss/unocss) and [HopeUI](https://hope-ui.com/).
 
-## Try it now!
+## Try it now
 
 > Vitesse requires Node >=14.18
 
@@ -175,7 +172,7 @@ And, enjoy :)
 
 ### Development
 
-Just run and visit http://localhost:3333
+Just run and visit <http://localhost:3333>
 
 ```bash
 pnpm dev
@@ -214,3 +211,25 @@ docker run --rm -it -p 8080:80 vitesse:latest
 I have created several Vite apps recently. Setting the configs up is kinda the bottleneck for me to make the ideas simply come true within a very short time.
 
 So I made this starter template for myself to create apps more easily, along with some good practices that I have learned from making those apps. It's strongly opinionated, but feel free to tweak it or even maintain your own forks. [(see community maintained variation forks)](#variations)
+
+## VuePress@next
+
+### Theme
+
+[vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope): A vuepress theme with tons of features✨
+
+Just run and visit <http://localhost:8080>
+
+```bash
+pnpm run docs:dev
+```
+
+### Build VuePress
+
+To build the VuePress, run
+
+```bash
+pnpm run build:docs
+```
+
+And you will see the generated file in `docs/.vuepress/dist` that ready to be served.
