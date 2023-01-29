@@ -26,7 +26,7 @@ projects:
     link: https://github.com/FuckDoctors/rdm-builder
 
   - icon: macOS
-    name: book name
+    name: Hackintosh
     desc: ideapad-720s-13ikb Hackintosh
     link: https://github.com/FuckDoctors/ideapad-720s-13ikb-oc
 ---

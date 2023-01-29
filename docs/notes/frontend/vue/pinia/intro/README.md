@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-::: playground Basic example
+::: playground#vue Basic example
 
 @file App.vue
 
@@ -106,6 +106,14 @@ export const useCounterStore = defineStore('counter', {
 })
 ```
 
+@setting
+
+```json
+{
+  "service": "https://vue-sfc-playground.vercel.app"
+}
+```
+
 :::
 
 You can even use a function (similar to a component `setup()`) to define a Store for more advanced use cases:
@@ -124,7 +132,7 @@ export const useCounterStore = defineStore('counter', () => {
 })
 ```
 
-::: playground setup example
+::: playground#vue setup example
 
 @file App.vue
 
@@ -163,6 +171,14 @@ export const useCounterStore = defineStore('counter', () => {
     increment,
   }
 })
+```
+
+@setting
+
+```json
+{
+  "service": "https://vue-sfc-playground.vercel.app"
+}
 ```
 
 :::
@@ -204,7 +220,7 @@ export default {
 }
 ```
 
-::: playground Option API example
+::: playground#vue Option API example
 
 @file App.vue
 
@@ -276,6 +292,14 @@ export const useUserStore = defineStore('user', {
     },
   },
 })
+```
+
+@setting
+
+```json
+{
+  "service": "https://vue-sfc-playground.vercel.app"
+}
 ```
 
 :::

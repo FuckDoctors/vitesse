@@ -26,7 +26,7 @@ projects:
     link: https://github.com/FuckDoctors/rdm-builder
 
   - icon: macOS
-    name: book name
+    name: 我的黑苹果
     desc: ideapad-720s-13ikb 黑苹果
     link: https://github.com/FuckDoctors/ideapad-720s-13ikb-oc
 ---

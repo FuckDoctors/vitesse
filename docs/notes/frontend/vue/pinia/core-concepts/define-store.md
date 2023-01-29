@@ -72,7 +72,7 @@ export default defineComponent({
 })
 ```
 
-::: playground Destructure example
+::: playground#vue Destructure example
 
 @file App.vue
 
@@ -118,6 +118,14 @@ export const useStore = defineStore('test', {
 })
 ```
 
+@setting
+
+```json
+{
+  "service": "https://vue-sfc-playground.vercel.app"
+}
+```
+
 :::
 
 In order to extract properties from the store while keeping its reactivity, you need to use `storeToRefs()`.
@@ -147,7 +155,7 @@ export default defineComponent({
 })
 ```
 
-::: playground Destructure example using storeToRefs
+::: playground#vue Destructure example using storeToRefs
 
 @file App.vue
 
@@ -192,6 +200,14 @@ export const useStore = defineStore('test', {
     },
   },
 })
+```
+
+@setting
+
+```json
+{
+  "service": "https://vue-sfc-playground.vercel.app"
+}
 ```
 
 :::

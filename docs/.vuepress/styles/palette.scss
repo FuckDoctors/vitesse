@@ -1,2 +1,7 @@
 // you can change colors here
 // $theme-color: #096dd9;
+
+:root {
+  // 暂定一个footer的高度，以便计算页面最小高度
+  --footer-height: 3.75rem;
+}
