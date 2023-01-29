@@ -16,22 +16,12 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import VueMacros from 'unplugin-vue-macros/vite'
-import postcssImport from 'postcss-import'
-import autoprefixer from 'autoprefixer'
-import postcssScss from 'postcss-scss'
 
 export default defineConfig({
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname)}/`,
       '~/': `${path.resolve(__dirname, 'src')}/`,
-    },
-  },
-
-  css: {
-    postcss: {
-      syntax: postcssScss,
-      plugins: [postcssImport, autoprefixer],
     },
   },
 

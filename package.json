@@ -1,11 +1,12 @@
 {
-  "type": "commonjs",
   "private": true,
   "packageManager": "pnpm@7.17.1",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
     "lint": "eslint .",
+    "lint:antfu": "eslint .",
+    "lint:antfu-fix": "eslint . --fix",
     "lint:types": "vue-tsc --noEmit --skipLibCheck",
     "lint:css": "stylelint --fix \"**/*.{css,scss,vue}\"",
     "lint:js": "eslint --fix --ext \"**/*.{js,ts,vue}\"",
